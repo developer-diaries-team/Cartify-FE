@@ -1,35 +1,42 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './components/common/Navbar';
+import Footer from './components/common/Footer';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      minHeight: '100vh', 
+      width: '100%',
+      margin: 0,
+      padding: 0,
+      backgroundColor: '#ffffff', // Set background to white
+      color: '#213547'           // Dark text for readability on white
+    }}>
+      <Navbar />
+
+      <main style={{ 
+        flex: '1', 
+        padding: '100px 20px 20px 20px', 
+        textAlign: 'center',
+        width: '100%',
+        boxSizing: 'border-box'
+      }}>
+        <div className="card">
+          <p>Developer Dairies</p>
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   )
 }
 
-export default App
+export default App;
