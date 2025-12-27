@@ -1,10 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 1. Global Reset - Allows Header/Footer to be 100% width */
+/* Update these sections in your App.css */
+
+:root {
+  background-color: #ffffff; /* Forces white background */
+  color: #213547;            /* Sets text to dark gray/blue */
 }
 
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; 
+  color: #213547;
+}
+
+/* Ensure the card button looks good on white */
+button {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #213547;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+/* 2. Navbar Styles */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #61dafb;
+}
+
+/* 3. Vite Original Styles (Modified) */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -19,12 +66,8 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -39,4 +82,51 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* 4. RESPONSIVE LOGIC (Mobile vs Laptop) */
+@media (max-width: 768px) {
+  /* Show hamburger icon on mobile */
+  .menu-icon {
+    display: block !important;
+  }
+
+  /* Hide links and turn into a dropdown menu */
+  .nav-links {
+    display: none; 
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Right under the header */
+    left: 0;
+    width: 100%;
+    background-color: #282c34;
+    padding: 20px 0;
+    gap: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  /* When JS toggles the 'active' class */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-bottom: 1px solid #3d4451;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/* Add this to your existing App.css */
+
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column !important; /* Stack links on tiny screens */
+    gap: 10px !important;
+  }
+  
+  footer {
+    padding: 1.5rem 10px !important;
+  }
 }
