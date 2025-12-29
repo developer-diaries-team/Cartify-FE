@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "dist"  # Note: Vite uses 'dist', not 'build'
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
@@ -8,4 +8,9 @@
   status = 200
 
 [build.environment]
-  NODE_VERSION = "18"
+  # Update to Node.js 20 or 22 (Vite requires 20.19+ or 22.12+)
+  NODE_VERSION = "20"  # or "22"
+
+# Optional: Add plugins for better performance
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
