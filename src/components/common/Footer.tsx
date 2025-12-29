@@ -21,9 +21,9 @@ const Footer: React.FC = () => {
       }}>
         {/* Brand/Copyright Section */}
         <div>
-          <h3 style={{ margin: '0 0 5px 0', color: '#61dafb' }}>MYBRAND</h3>
+          <h3 style={{ margin: '0 0 5px 0', color: '#61dafb' }}>My Brand</h3>
           <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>
-            &copy; {new Date().getFullYear()} All rights reserved.
+            &copy; {new Date().getFullYear()}. | All rights reserved.
           </p>
         </div>
 
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
           flexWrap: 'wrap',
           justifyContent: 'center'
         }}>
-          <a href="#" style={linkStyle}>Privacy Policy</a>
-          <a href="#" style={linkStyle}>Terms of Service</a>
+          {/* <a href="#" style={linkStyle}>Privacy Policy</a> */}
+          {/* <a href="#" style={linkStyle}>Terms of Service</a> */}
           <a href="#" style={linkStyle}>Contact Us</a>
         </div>
       </div>
