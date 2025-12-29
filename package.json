@@ -6,7 +6,7 @@
   "homepage": ".",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",  # Remove "tsc -b &&" if you don't need TypeScript checking
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -28,9 +28,9 @@
     "globals": "^16.5.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^6.0.0"  # CHANGE THIS: Use stable Vite 6
+    "vite": "^6.0.0"
   },
   "engines": {
-    "node": ">=20.19.0"  # ADD THIS: Specify Node.js requirement
+    "node": ">=20.19.0"
   }
 }
